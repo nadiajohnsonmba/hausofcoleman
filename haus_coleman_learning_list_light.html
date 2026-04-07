@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>[Light] Haus of Coleman — Couch-Mode Learning List</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Georgia, serif; background: #F5F0E8; color: #1a1a1a; line-height: 1.7; }
+  .page { max-width: 760px; margin: 0 auto; padding: 2.5rem 1.5rem 4rem; }
+  .brand-header { text-align: center; margin-bottom: 2.5rem; padding-bottom: 1.5rem; border-bottom: 1.5px solid #C9A84C; }
+  .brand-name { font-size: 1.8rem; letter-spacing: .07em; color: #5C1A28; }
+  .brand-sub { font-size: .9rem; font-style: italic; color: #4A5240; margin-top: .3rem; }
+  .doc-title { font-size: .7rem; letter-spacing: .12em; text-transform: uppercase; color: #C9A84C; margin-top: .6rem; font-family: Arial, sans-serif; }
+  .note { background: #fff8ec; border-left: 3px solid #C9A84C; padding: .9rem 1.1rem; border-radius: 0 8px 8px 0; font-size: .9rem; color: #2A2A2A; line-height: 1.8; margin-bottom: 2rem; font-family: Arial, sans-serif; }
+  .section { margin-bottom: 2.2rem; }
+  h2 { font-size: .65rem; letter-spacing: .12em; text-transform: uppercase; color: #C9A84C; margin-bottom: .3rem; font-family: Arial, sans-serif; font-weight: 700; }
+  h3 { font-size: 1.1rem; font-weight: normal; color: #5C1A28; margin-bottom: .9rem; border-bottom: 0.5px solid #ddd5c5; padding-bottom: .4rem; }
+  .item { background: #fff; border: 1px solid #e8e0d0; border-radius: 10px; padding: 1rem 1.2rem; margin-bottom: .6rem; }
+  .item-name { font-size: .95rem; color: #5C1A28; margin-bottom: .15rem; }
+  .item-handle { font-size: .8rem; color: #C9A84C; font-family: Arial, sans-serif; margin-bottom: .35rem; }
+  .item-why { font-size: .82rem; color: #4A5240; line-height: 1.65; font-family: Arial, sans-serif; }
+  .tag { display: inline-block; font-size: .65rem; background: #F5F0E8; color: #6B7A5A; border: 1px solid #d8d0c0; border-radius: 20px; padding: 2px 8px; margin-top: .4rem; font-family: Arial, sans-serif; margin-right: 4px; }
+  .tag-gold { background: #fdf3dc; color: #854F0B; border-color: #e8d5a0; }
+  .footer { text-align: center; font-family: Arial, sans-serif; font-size: .72rem; color: #888; margin-top: 3rem; padding-top: 1.2rem; border-top: 1.5px solid #C9A84C; }
+  .reminder { background: #fff; border: 1px solid #e8e0d0; border-left: 3px solid #4A5240; border-radius: 0 10px 10px 0; padding: 1rem 1.2rem; font-size: .88rem; color: #2A2A2A; line-height: 1.8; margin-top: 1.5rem; font-style: italic; font-family: Arial, sans-serif; }
+
+/* Light mode dark-section text fixes */
+[style*="background:#5C1A28"] { color: #F3EEE3 !important; }
+[style*="background: #5C1A28"] { color: #F3EEE3 !important; }
+[style*="background:#4A0E1C"] * { color: #F3EEE3 !important; }
+[style*="background: #4A0E1C"] * { color: #F3EEE3 !important; }
+[style*="background:#4A0E1C"] * { color: #F3EEE3 !important; }
+.back-top, .back-top * { color: #F3EEE3 !important; }
+.back-top .back-origin-quote { color: #F3EEE3 !important; }
+.services-section, .services-section * { color: #5C1A28 !important; }
+.services-section .svc-name { color: #5C1A28 !important; }
+.front-hero .hero-right { color: #5C1A28 !important; }
+/* Story section on inner circle */
+.story, .story * { color: #F3EEE3 !important; }
+/* Dark catalog section on brochure */
+.services-section { background: rgba(92,26,40,.07) !important; }
+.services-section .svc-name { color: #5C1A28 !important; }
+.services-section .svc-desc { color: #6B3A28 !important; }
+.services-section .svc-price { color: #7a4a3a !important; }
+/* Access badge / dark boxes */
+.access-badge, .access-badge * { color: #F3EEE3 !important; }
+.letter, .letter * { color: #F3EEE3 !important; }
+.letter .letter-sig * { color: #F3EEE3 !important; }
+/* Phase headers on deck */
+.ph1 .phase-header *, .ph2 .phase-header *, .ph3 .phase-header * { color: #F3EEE3 !important; }
+/* Pillar left panels on deck */
+.pillar-left, .pillar-left * { color: #F3EEE3 !important; }
+/* Cover section */
+.cover, .cover * { color: #F3EEE3 !important; }
+.cover .cover-content * { color: #F3EEE3 !important; }
+/* Origin slide */
+.slide-origin, .slide-origin * { color: #F3EEE3 !important; }
+/* Dark back-top section */
+.back-top { background: #5C1A28 !important; }
+.back-top * { color: #F3EEE3 !important; }
+/* Footer dark sections */
+.back-footer { background: #5C1A28 !important; }
+.back-footer * { color: #F3EEE3 !important; }
+.front-footer { background: #5C1A28 !important; }
+.front-footer * { color: #F3EEE3 !important; }
+/* Brand deck slides with dark bg */
+.slide { background: #FAF7F2 !important; }
+.slide-cover { background: #5C1A28 !important; }
+.slide-cover * { color: #F3EEE3 !important; }
+.slide-origin { background: #5C1A28 !important; }
+.slide-soul, .slide-catalog, .slide-aesthetic { background: #FAF7F2 !important; }
+.slide-pillar { background: #FAF7F2 !important; }
+.pillar-left { background: #5C1A28 !important; }
+/* Nav */
+.nav { background: #FAF7F2 !important; border-bottom: 1px solid rgba(140,40,70,.2) !important; }
+.nav-brand { color: #7a4a3a !important; }
+.nav-btn { color: #5C1A28 !important; }
+.nav-btn.active { color: #5C1A28 !important; }
+/* Wordmark oxblood */
+.hoc-wm-dark .hoc-haus, .hoc-wm-cream .hoc-haus { color: #5C1A28 !important; }
+.hoc-wm-dark .hoc-coleman, .hoc-wm-cream .hoc-coleman { color: #5C1A28 !important; }
+.wm-haus, .wm .haus, .cover-wm .wm-haus { color: #5C1A28 !important; }
+.wm-coleman, .wm .coleman, .cover-wm .wm-coleman { color: #5C1A28 !important; }
+/* Sizes section dark bg */
+.sizes-bg { background: #5C1A28 !important; }
+.sizes-bg * { color: #F3EEE3 !important; }
+/* Testimonial dark area on inner circle */
+.access-badge { background: #5C1A28 !important; }
+/* Story block */
+.story { background: #5C1A28 !important; }
+/* Revenue roadmap dark boxes */
+.math-box { background: #5C1A28 !important; }
+.math-box * { color: #F3EEE3 !important; }
+
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="brand-header">
+    <div class="brand-name">HAUS OF COLEMAN</div>
+    <div class="brand-sub">Spaces that hold your history. Rooms that know your name.</div>
+    <div class="doc-title">Couch-Mode Learning List</div>
+  </div>
+
+  <div class="note">
+    Everything below can be done lying down, phone in hand, no effort required. This is not a to-do list — it's a menu. Pick up whatever feels good. Put it down whenever you want.
+  </div>
+
+  <!-- YOUTUBE -->
+  <div class="section">
+    <h2>YouTube</h2>
+    <h3>Watch from bed</h3>
+
+    <div class="item">
+      <div class="item-name">Carmeon Hamilton — Nubi Interiors</div>
+      <div class="item-handle">Search: Carmeon Hamilton interior design</div>
+      <div class="item-why">A Black Memphis-based designer and content creator who documents her full design process. Her perspective on cultural identity in spaces will feel like a direct conversation with your own brand values.</div>
+      <span class="tag tag-gold">Black designer</span><span class="tag">Cultural design</span><span class="tag">Process-focused</span>
+    </div>
+
+    <div class="item">
+      <div class="item-name">ISTYLEMYSTYLE — Sheryl</div>
+      <div class="item-handle">Search: ISTYLEMYSTYLE YouTube</div>
+      <div class="item-why">A Black designer focused on budget-conscious styling and thrifting. Deeply practical and warm. Great for learning how to talk about accessible luxury — which is one of your content pillars.</div>
+      <span class="tag tag-gold">Black designer</span><span class="tag">Budget styling</span><span class="tag">Thrifting</span>
+    </div>
+
+    <div class="item">
+      <div class="item-name">Studio McGee</div>
+      <div class="item-handle">Search: Studio McGee YouTube</div>
+      <div class="item-why">High-end residential design documented beautifully. Watch for how they present client projects, talk about their process, and build a brand narrative. Good study in the business side of design.</div>
+      <span class="tag">Client process</span><span class="tag">Brand building</span><span class="tag">High-end residential</span>
+    </div>
+
+    <div class="item">
+      <div class="item-name">Emily Henderson Design</div>
+      <div class="item-handle">Search: Emily Henderson Design YouTube</div>
+      <div class="item-why">Her "Why This Room Works" series is one of the best free design education resources available. She breaks down exactly why a space succeeds — proportions, color, balance — in plain language.</div>
+      <span class="tag">Design theory</span><span class="tag">Room analysis</span><span class="tag">Practical education</span>
+    </div>
+
+    <div class="item">
+      <div class="item-name">Architectural Digest — Open Door series</div>
+      <div class="item-handle">Search: Architectural Digest Open Door</div>
+      <div class="item-why">Celebrity home tours that are genuinely educational. Train your eye to notice how high-end designers layer a space — textiles, art, scale, light. This is the "watching aspirational content as research" category.</div>
+      <span class="tag">Aspirational</span><span class="tag">Eye training</span><span class="tag">Luxury reference</span>
+    </div>
+  </div>
+
+  <!-- TIKTOK -->
+  <div class="section">
+    <h2>TikTok</h2>
+    <h3>Scroll with purpose</h3>
+
+    <div class="item">
+      <div class="item-name">Rasheeda Gray — Gray Space Interiors</div>
+      <div class="item-handle">@rasheedagray</div>
+      <div class="item-why">Black woman designer known for transitional modern chic. She openly shares both her design work and her entrepreneurial journey — including the hard parts. Exactly the kind of voice Haus of Coleman will one day be.</div>
+      <span class="tag tag-gold">Black woman designer</span><span class="tag">Entrepreneur mindset</span><span class="tag">Transitional style</span>
+    </div>
+
+    <div class="item">
+      <div class="item-name">Demetrius — At Home with Savvy</div>
+      <div class="item-handle">@athomewithsavvy</div>
+      <div class="item-why">Black designer who built a large following through elevated everyday styling. Good study in how to grow an audience by showing lifestyle and design together — not just finished rooms.</div>
+      <span class="tag tag-gold">Black designer</span><span class="tag">Elevated lifestyle</span><span class="tag">Audience building</span>
+    </div>
+
+    <div class="item">
+      <div class="item-name">Kayla Simone Home</div>
+      <div class="item-handle">@kaylasimonehome</div>
+      <div class="item-why">Black woman designer with a strong point of view and good vibes. She bridges DIY and design in a way that is relatable without being cheap — useful to study as you think about accessible luxury content.</div>
+      <span class="tag tag-gold">Black woman designer</span><span class="tag">DIY meets design</span><span class="tag">Accessible luxury</span>
+    </div>
+
+    <div class="item">
+      <div class="item-name">Sandy Santilus</div>
+      <div class="item-handle">Search: Sandy Santilus TikTok</div>
+      <div class="item-why">Atlanta-based Black designer who started from sharing her own apartment transformation. Her renter-friendly, cost-conscious approach is proof that a relatable origin story is a brand asset, not a liability.</div>
+      <span class="tag tag-gold">Black designer</span><span class="tag">Origin story brand</span><span class="tag">Budget-friendly</span>
+    </div>
+  </div>
+
+  <!-- INSTAGRAM -->
+  <div class="section">
+    <h2>Instagram</h2>
+    <h3>Follow and absorb</h3>
+
+    <div class="item">
+      <div class="item-name">Beth Diana Smith</div>
+      <div class="item-handle">@bethdianasmith</div>
+      <div class="item-why">Featured in Forbes and Wall Street Journal. A former finance professional who pivoted to design and built a powerhouse firm. Her layered textures and maximalist color palettes are stunning — and her story mirrors yours in some ways.</div>
+      <span class="tag tag-gold">Black woman designer</span><span class="tag">Career pivot story</span><span class="tag">Maximalist</span>
+    </div>
+
+    <div class="item">
+      <div class="item-name">Shavonda Gardner — SG Style</div>
+      <div class="item-handle">@sgstyle</div>
+      <div class="item-why">Eclectic global style, bold color, intentional living in small spaces. Her work on identity and living large with less is philosophically close to what Haus of Coleman is building toward.</div>
+      <span class="tag tag-gold">Black woman designer</span><span class="tag">Global influence</span><span class="tag">Bold color</span>
+    </div>
+
+    <div class="item">
+      <div class="item-name">Malene Barnett — Black Artists + Designers Guild</div>
+      <div class="item-handle">@malenebarnett</div>
+      <div class="item-why">Founder of the Black Artists + Designers Guild. Follow her not just for design inspiration but for community — this organization exists specifically to support Black creatives in the design world. Worth knowing about.</div>
+      <span class="tag tag-gold">Black woman designer</span><span class="tag">Community + advocacy</span><span class="tag">Art + design</span>
+    </div>
+
+    <div class="item">
+      <div class="item-name">Sheila Bridges</div>
+      <div class="item-handle">@sheilabridges</div>
+      <div class="item-why">One of the most influential Black designers working today. Elle Decor A-List since 1994. Her Harlem Toile wallpaper is in the Smithsonian. Follow her to study what it looks like when cultural identity becomes iconic design.</div>
+      <span class="tag tag-gold">Black woman designer</span><span class="tag">Cultural identity in design</span><span class="tag">Legacy</span>
+    </div>
+  </div>
+
+  <!-- READING -->
+  <div class="section">
+    <h2>Articles + Blogs</h2>
+    <h3>Read when your brain wants depth</h3>
+
+    <div class="item">
+      <div class="item-name">Architectural Digest — ad.com</div>
+      <div class="item-handle">architecturaldigest.com</div>
+      <div class="item-why">The gold standard. Read their home tours for compositional study, their trend pieces for market awareness, and their designer profiles for business inspiration. Free on the web.</div>
+      <span class="tag">Aspirational</span><span class="tag">Trend awareness</span><span class="tag">Free</span>
+    </div>
+
+    <div class="item">
+      <div class="item-name">Apartment Therapy</div>
+      <div class="item-handle">apartmenttherapy.com</div>
+      <div class="item-why">The practical counterpart to AD. Great for accessible design ideas, before/after stories, and understanding what everyday clients want. Read their "Small Cool" and "House Tours" sections.</div>
+      <span class="tag">Practical</span><span class="tag">Client perspective</span><span class="tag">Budget-conscious</span>
+    </div>
+
+    <div class="item">
+      <div class="item-name">RMCAD — Color Theory in Interior Design</div>
+      <div class="item-handle">rmcad.edu/blog</div>
+      <div class="item-why">A genuinely useful free article that explains how color affects mood, emotion, and perception room by room. This is the kind of thing that will sharpen your client consultations and your content voice.</div>
+      <span class="tag">Color theory</span><span class="tag">Educational</span><span class="tag">Free</span>
+    </div>
+
+    <div class="item">
+      <div class="item-name">Coco Cozy — Black Interior Designers on TikTok</div>
+      <div class="item-handle">cococozy.com</div>
+      <div class="item-why">A roundup specifically highlighting Black designers on TikTok with links to each account. A useful discovery tool — read it once and you'll have a week's worth of new accounts to explore.</div>
+      <span class="tag tag-gold">Black designers</span><span class="tag">Discovery list</span><span class="tag">Quick read</span>
+    </div>
+
+    <div class="item">
+      <div class="item-name">Dakota Design Co — The Design Brief blog</div>
+      <div class="item-handle">dakotadesigncompany.com/blog</div>
+      <div class="item-why">Business-focused blog for designers. Articles on pricing, consultations, contracts, and how to structure client relationships. Very practical for the business-building phase you're entering.</div>
+      <span class="tag">Business of design</span><span class="tag">Pricing + process</span><span class="tag">Practical</span>
+    </div>
+  </div>
+
+  <!-- ONE BONUS -->
+  <div class="section">
+    <h2>One thing that isn't design</h2>
+    <h3>But is entirely for you</h3>
+
+    <div class="item">
+      <div class="item-name">Black Artists + Designers Guild</div>
+      <div class="item-handle">badguild.com — founded by Malene Barnett</div>
+      <div class="item-why">An organization founded specifically to amplify Black artists and designers in spaces that have historically excluded them. Worth exploring their membership and community — not for networking pressure, but to know you are not building this alone. There are rooms full of people who have done what you are doing.</div>
+      <span class="tag tag-gold">Community</span><span class="tag">Black designers</span><span class="tag">When you're ready</span>
+    </div>
+  </div>
+
+  <div class="reminder">
+    None of this is required. None of this has a deadline. On the days when even scrolling feels like too much, that's information too — rest is part of the work. Come back to this list whenever you need something to focus on that doesn't ask anything of you.
+  </div>
+
+  <div class="footer">
+    HAUS OF COLEMAN &nbsp;·&nbsp; Made for you, by you &nbsp;·&nbsp; Take your time
+  </div>
+
+</div>
+</body>
+</html>

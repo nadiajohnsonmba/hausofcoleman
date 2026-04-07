@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>[Light] Haus of Coleman — UCLA Game Plan</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Space+Mono:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap');
+
+:root {
+  --black: #FAF7F2;
+  --deep: #4A0E1C;
+  --oxblood: #5C1A28;
+  --oxblood-deep: #4A0E1C;
+  --gold: #7a4a3a;
+  --gold-light: #7a4a3a;
+  --cream: #5C1A28;
+  --oatmeal: #7a4a3a;
+  --olive: #5C1A28;
+  --white: #5C1A28;
+  --mauve: #7a4a3a;
+  --terracotta: #7a4a3a;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #FAF7F2; font-family: 'Cormorant Garamond', serif; color: var(--cream); line-height: 1.7; }
+
+.page { max-width: 860px; margin: 0 auto; padding: 2.5rem 1.5rem 4rem; }
+
+.header { text-align: center; margin-bottom: 2.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid rgba(153,111,50,.2); }
+.eyebrow { font-family: 'Space Mono', monospace; font-size: 7.5pt; letter-spacing: .25em; color: var(--gold); text-transform: uppercase; opacity: .8; margin-bottom: .5rem; }
+.title { font-family: 'Playfair Display', serif; font-size: 2.2rem; font-weight: 700; color: var(--ww); line-height: 1.1; margin-bottom: .3rem; }
+.title em { font-style: italic; color: var(--gold); }
+.subtitle { font-family: 'Cormorant Garamond', serif; font-size: 1rem; font-style: italic; color: var(--oatmeal); font-weight: 300; }
+.gold-rule { width: 50px; height: 1px; background: var(--gold); opacity: .6; margin: 1rem auto; }
+
+/* Program overview stats */
+.stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: .75rem; margin-bottom: 2rem; }
+.stat { background: rgba(153,111,50,.07); border: 1px solid rgba(153,111,50,.18); border-radius: 8px; padding: .9rem 1rem; text-align: center; }
+.stat-num { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-style: italic; color: var(--gold); line-height: 1; margin-bottom: .2rem; }
+.stat-label { font-family: 'Space Mono', monospace; font-size: 5.5pt; letter-spacing: .1em; text-transform: uppercase; color: var(--oatmeal); opacity: .75; line-height: 1.5; }
+
+/* Important note box */
+.note-box { background: rgba(74,48,41,.35); border: 1px solid rgba(153,111,50,.3); border-radius: 8px; padding: 1rem 1.25rem; margin-bottom: 2rem; }
+.note-box p { font-size: .88rem; color: var(--oatmeal); line-height: 1.8; font-weight: 300; }
+.note-box strong { color: var(--gold); font-style: italic; font-family: 'Playfair Display', serif; font-weight: 400; font-size: .95rem; }
+
+/* Year/Quarter blocks */
+.year { margin-bottom: 2.5rem; }
+.year-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
+.year-label { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-style: italic; color: var(--ww); }
+.year-sub { font-family: 'Space Mono', monospace; font-size: 7pt; color: var(--gold); letter-spacing: .15em; text-transform: uppercase; opacity: .65; }
+.year-rule { flex: 1; height: 1px; background: rgba(153,111,50,.15); }
+
+.quarters { display: grid; grid-template-columns: 1fr 1fr; gap: .75rem; margin-bottom: .75rem; }
+
+.quarter { background: rgba(255,255,255,.025); border: 1px solid rgba(153,111,50,.12); border-radius: 8px; padding: 1rem 1.1rem; }
+.quarter.active { border-color: rgba(153,111,50,.4); background: rgba(153,111,50,.05); }
+.quarter.rest { background: rgba(255,255,255,.01); border-color: rgba(0,0,0,.05); }
+
+.q-label { font-family: 'Space Mono', monospace; font-size: 6pt; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); opacity: .6; margin-bottom: .25rem; }
+.q-course { font-family: 'Playfair Display', serif; font-size: 1rem; font-style: italic; color: var(--ww); margin-bottom: .2rem; line-height: 1.3; }
+.q-code { font-family: 'Space Mono', monospace; font-size: 5.5pt; color: var(--oatmeal); opacity: .55; letter-spacing: .08em; margin-bottom: .4rem; }
+.q-why { font-size: .78rem; color: var(--oatmeal); line-height: 1.6; font-weight: 300; }
+.q-cost { font-family: 'Space Mono', monospace; font-size: 6.5pt; color: var(--gold-light); opacity: .7; margin-top: .4rem; letter-spacing: .06em; }
+.q-rest { font-size: .8rem; color: var(--oatmeal); opacity: .45; font-style: italic; padding: .4rem 0; }
+
+/* Unlock banner */
+.unlock { background: rgba(52,59,54,.6); border: 1px solid rgba(153,111,50,.25); border-radius: 8px; padding: .85rem 1.1rem; margin-top: .5rem; display: flex; align-items: flex-start; gap: .75rem; }
+.unlock-icon { font-size: 1rem; margin-top: 1pt; flex-shrink: 0; color: var(--gold); }
+.unlock-text { font-size: .8rem; color: var(--oatmeal); line-height: 1.65; font-weight: 300; }
+.unlock-text strong { color: var(--gold); font-style: italic; font-family: 'Playfair Display', serif; font-size: .88rem; font-weight: 400; }
+
+/* Running cost tracker */
+.cost-tracker { background: rgba(74,48,41,.25); border: 1px solid rgba(153,111,50,.15); border-radius: 6px; padding: .6rem 1rem; margin-top: .5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: .5rem; }
+.ct-label { font-family: 'Space Mono', monospace; font-size: 6pt; letter-spacing: .15em; text-transform: uppercase; color: var(--oatmeal); opacity: .6; }
+.ct-num { font-family: 'Space Mono', monospace; font-size: .8rem; color: var(--gold); letter-spacing: .05em; }
+
+/* Offering evolution table */
+.section-title { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 400; color: var(--ww); margin-bottom: .25rem; }
+.section-title em { font-style: italic; color: var(--gold); }
+.section-eyebrow { font-family: 'Space Mono', monospace; font-size: 7pt; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); opacity: .7; margin-bottom: .3rem; }
+
+.offering-timeline { margin-top: 1.2rem; }
+.ot-row { display: grid; grid-template-columns: 1.2fr 2fr 1.8fr; gap: .75rem; padding: .65rem 0; border-bottom: 1px solid rgba(0,0,0,.04); align-items: start; }
+.ot-row:last-child { border-bottom: none; }
+.ot-row.header .ot-cell { font-family: 'Space Mono', monospace; font-size: 6pt; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); opacity: .55; padding-bottom: .3rem; }
+.ot-period { font-family: 'Space Mono', monospace; font-size: 7pt; color: var(--gold-light); letter-spacing: .06em; opacity: .8; }
+.ot-available { font-size: .82rem; color: var(--oatmeal); line-height: 1.65; font-weight: 300; }
+.ot-rate { font-family: 'Space Mono', monospace; font-size: .72rem; color: var(--cream); letter-spacing: .04em; }
+.ot-new { color: var(--gold); font-style: italic; font-family: 'Playfair Display', serif; font-size: .88rem; font-weight: 400; }
+
+.divider { border: none; border-top: 1px solid rgba(153,111,50,.1); margin: 2rem 0; }
+
+/* Tips section */
+.tips { display: grid; grid-template-columns: 1fr 1fr; gap: .75rem; }
+.tip { background: rgba(0,0,0,.02); border: 1px solid rgba(153,111,50,.1); border-radius: 8px; padding: .9rem 1rem; }
+.tip-title { font-family: 'Playfair Display', serif; font-size: .95rem; font-style: italic; color: var(--ww); margin-bottom: .3rem; }
+.tip-body { font-size: .78rem; color: var(--oatmeal); line-height: 1.65; font-weight: 300; }
+
+.closing { text-align: center; padding: 1.5rem 0 0; }
+.closing p { font-family: 'Playfair Display', serif; font-size: 1.05rem; font-style: italic; color: var(--oatmeal); line-height: 1.8; max-width: 560px; margin: 0 auto; }
+
+@media (max-width: 580px) {
+  .stats { grid-template-columns: repeat(2, 1fr); }
+  .quarters { grid-template-columns: 1fr; }
+  .tips { grid-template-columns: 1fr; }
+  .ot-row { grid-template-columns: 1fr; gap: .2rem; }
+  .ot-row.header { display: none; }
+  .title { font-size: 1.7rem; }
+}
+.hoc-wordmark{text-align:center;line-height:1}.hoc-wordmark .hoc-haus{font-family:"Josefin Sans",sans-serif;font-weight:100;letter-spacing:.65em;text-transform:uppercase;display:block;line-height:1;padding-left:.65em}.hoc-wordmark .hoc-of{font-family:"Josefin Sans",sans-serif;font-weight:200;letter-spacing:.55em;text-transform:uppercase;display:block;margin:.3em 0;padding-left:.55em}.hoc-wordmark .hoc-coleman{font-family:"Josefin Sans",sans-serif;font-weight:400;letter-spacing:.38em;text-transform:uppercase;display:block;line-height:1;padding-left:.38em}.hoc-wm-dark .hoc-haus{color:#5C1A28;font-size:2.4rem}.hoc-wm-dark .hoc-of{color:#7a4a3a;font-size:.48rem}.hoc-wm-dark .hoc-coleman{color:#5C1A28;font-size:2.15rem}.hoc-wm-oxblood .hoc-haus{color:#5C1A28;font-size:2.4rem}.hoc-wm-oxblood .hoc-of{color:#7a4a3a;font-size:.48rem}.hoc-wm-oxblood .hoc-coleman{color:#5C1A28;font-size:2.15rem}.hoc-wm-cream .hoc-haus{color:#5C1A28;font-size:2.4rem}.hoc-wm-cream .hoc-of{color:#5C1A28;font-size:.48rem}.hoc-wm-cream .hoc-coleman{color:#5C1A28;font-size:2.15rem}.hoc-wm-sm .hoc-haus{font-size:1rem}.hoc-wm-sm .hoc-of{font-size:.32rem}.hoc-wm-sm .hoc-coleman{font-size:.9rem}
+
+/* Light mode dark-section text fixes */
+[style*="background:#5C1A28"] { color: #F3EEE3 !important; }
+[style*="background: #5C1A28"] { color: #F3EEE3 !important; }
+[style*="background:#4A0E1C"] * { color: #F3EEE3 !important; }
+[style*="background: #4A0E1C"] * { color: #F3EEE3 !important; }
+[style*="background:#4A0E1C"] * { color: #F3EEE3 !important; }
+.back-top, .back-top * { color: #F3EEE3 !important; }
+.back-top .back-origin-quote { color: #F3EEE3 !important; }
+.services-section, .services-section * { color: #5C1A28 !important; }
+.services-section .svc-name { color: #5C1A28 !important; }
+.front-hero .hero-right { color: #5C1A28 !important; }
+/* Story section on inner circle */
+.story, .story * { color: #F3EEE3 !important; }
+/* Dark catalog section on brochure */
+.services-section { background: rgba(92,26,40,.07) !important; }
+.services-section .svc-name { color: #5C1A28 !important; }
+.services-section .svc-desc { color: #6B3A28 !important; }
+.services-section .svc-price { color: #7a4a3a !important; }
+/* Access badge / dark boxes */
+.access-badge, .access-badge * { color: #F3EEE3 !important; }
+.letter, .letter * { color: #F3EEE3 !important; }
+.letter .letter-sig * { color: #F3EEE3 !important; }
+/* Phase headers on deck */
+.ph1 .phase-header *, .ph2 .phase-header *, .ph3 .phase-header * { color: #F3EEE3 !important; }
+/* Pillar left panels on deck */
+.pillar-left, .pillar-left * { color: #F3EEE3 !important; }
+/* Cover section */
+.cover, .cover * { color: #F3EEE3 !important; }
+.cover .cover-content * { color: #F3EEE3 !important; }
+/* Origin slide */
+.slide-origin, .slide-origin * { color: #F3EEE3 !important; }
+/* Dark back-top section */
+.back-top { background: #5C1A28 !important; }
+.back-top * { color: #F3EEE3 !important; }
+/* Footer dark sections */
+.back-footer { background: #5C1A28 !important; }
+.back-footer * { color: #F3EEE3 !important; }
+.front-footer { background: #5C1A28 !important; }
+.front-footer * { color: #F3EEE3 !important; }
+/* Brand deck slides with dark bg */
+.slide { background: #FAF7F2 !important; }
+.slide-cover { background: #5C1A28 !important; }
+.slide-cover * { color: #F3EEE3 !important; }
+.slide-origin { background: #5C1A28 !important; }
+.slide-soul, .slide-catalog, .slide-aesthetic { background: #FAF7F2 !important; }
+.slide-pillar { background: #FAF7F2 !important; }
+.pillar-left { background: #5C1A28 !important; }
+/* Nav */
+.nav { background: #FAF7F2 !important; border-bottom: 1px solid rgba(140,40,70,.2) !important; }
+.nav-brand { color: #7a4a3a !important; }
+.nav-btn { color: #5C1A28 !important; }
+.nav-btn.active { color: #5C1A28 !important; }
+/* Wordmark oxblood */
+.hoc-wm-dark .hoc-haus, .hoc-wm-cream .hoc-haus { color: #5C1A28 !important; }
+.hoc-wm-dark .hoc-coleman, .hoc-wm-cream .hoc-coleman { color: #5C1A28 !important; }
+.wm-haus, .wm .haus, .cover-wm .wm-haus { color: #5C1A28 !important; }
+.wm-coleman, .wm .coleman, .cover-wm .wm-coleman { color: #5C1A28 !important; }
+/* Sizes section dark bg */
+.sizes-bg { background: #5C1A28 !important; }
+.sizes-bg * { color: #F3EEE3 !important; }
+/* Testimonial dark area on inner circle */
+.access-badge { background: #5C1A28 !important; }
+/* Story block */
+.story { background: #5C1A28 !important; }
+/* Revenue roadmap dark boxes */
+.math-box { background: #5C1A28 !important; }
+.math-box * { color: #F3EEE3 !important; }
+
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="header">
+    <div class="eyebrow">Haus of Coleman · Education + Business Strategy</div>
+    <div class="gold-rule"></div>
+    <div class="hoc-wordmark hoc-wm-dark hoc-wm-sm" style="margin-bottom:.75rem"><span class="hoc-haus">Haus</span><span class="hoc-of">of</span><span class="hoc-coleman">Coleman</span></div><div class="title">The UCLA <em>Game Plan</em></div>
+    <div class="subtitle">Interior Design: Foundation Level Certificate · Paced for your life, not against it</div>
+  </div>
+
+  <!-- Program stats -->
+  <div class="stats">
+    <div class="stat">
+      <div class="stat-num">18</div>
+      <div class="stat-label">Total courses to complete certificate</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">~$745</div>
+      <div class="stat-label">Per course (current rate)</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">5 yrs</div>
+      <div class="stat-label">Maximum time allowed to finish</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">~$17K</div>
+      <div class="stat-label">Total program cost (paid as you go)</div>
+    </div>
+  </div>
+
+  <div class="note-box">
+    <p>At <strong>one course per quarter</strong> and roughly <strong>$745 per course</strong>, your out-of-pocket cost is about $250/month when spread across a 10–11 week quarter — well within your budget. You have up to 5 years to complete the program, so there is no race. Every course you finish immediately deepens your credibility and unlocks higher-value offerings for Haus of Coleman.</p>
+  </div>
+
+  <!-- YEAR 1 -->
+  <div class="year">
+    <div class="year-header">
+      <div class="year-label">Year One</div>
+      <div class="year-sub">2025 – 2026 · The foundation</div>
+      <div class="year-rule"></div>
+    </div>
+
+    <div class="quarters">
+      <div class="quarter active">
+        <div class="q-label">Quarter 1 · Fall 2025</div>
+        <div class="q-course">Fundamentals of Interior Architecture</div>
+        <div class="q-code">ARCH X 438 · 4 units · Live Online / Online</div>
+        <div class="q-why">Your entry point. Introduces design principles, vocabulary, psychology, and professional practice. Immediately validates your eye with formal language. Mondays 6:30–9:30 PM PT — manageable alongside your M.Ed.</div>
+        <div class="q-cost">$745 · ~$68/week over 11 weeks</div>
+      </div>
+      <div class="quarter rest">
+        <div class="q-label">Quarter 2 · Winter 2026</div>
+        <div class="q-rest">Rest quarter — M.Ed focus, grieving, settling in. No class. Let Quarter 1 land.</div>
+      </div>
+    </div>
+
+    <div class="unlock">
+      <div class="unlock-icon">✦</div>
+      <div class="unlock-text">After Quarter 1: You can now speak the formal language of design — begin mentioning your UCLA coursework in all client communications. <strong>The First Spin</strong> and <strong>The Crate</strong> are fully live and credentialed.</div>
+    </div>
+
+    <div class="quarters" style="margin-top:.75rem;">
+      <div class="quarter active">
+        <div class="q-label">Quarter 3 · Spring 2026</div>
+        <div class="q-course">Color Theory and Application</div>
+        <div class="q-code">ARCH X 452.1 · 4 units · Live Online / Online</div>
+        <div class="q-why">This one directly powers The Color Correction service. After this course you can charge full rate with complete confidence. Color is also your highest-margin offering relative to time invested.</div>
+        <div class="q-cost">$745</div>
+      </div>
+      <div class="quarter active">
+        <div class="q-label">Quarter 4 · Summer 2026</div>
+        <div class="q-course">Elements of Design I</div>
+        <div class="q-code">ARCH X 454A · 4 units · Live Online / Online</div>
+        <div class="q-why">Formal study of design elements — line, form, texture, scale, proportion. Makes every Blueprint project more sophisticated. Your portfolio rooms this summer will already reflect this.</div>
+        <div class="q-cost">$745</div>
+      </div>
+    </div>
+
+    <div class="unlock">
+      <div class="unlock-icon">✦</div>
+      <div class="unlock-text">After Quarter 3: <strong>The Color Correction</strong> officially unlocks at full rate. After Quarter 4: <strong>The Blueprint</strong> now carries formal design theory behind every recommendation — begin raising your rate to $400/room minimum.</div>
+    </div>
+
+    <div class="cost-tracker">
+      <div class="ct-label">Year 1 tuition spend</div>
+      <div class="ct-num">~$2,235 (3 courses)</div>
+      <div class="ct-label">Running total</div>
+      <div class="ct-num">$2,235 of ~$17,020</div>
+    </div>
+  </div>
+
+  <!-- YEAR 2 -->
+  <div class="year">
+    <div class="year-header">
+      <div class="year-label">Year Two</div>
+      <div class="year-sub">2026 – 2027 · The craft deepens</div>
+      <div class="year-rule"></div>
+    </div>
+
+    <div class="quarters">
+      <div class="quarter active">
+        <div class="q-label">Quarter 5 · Fall 2026</div>
+        <div class="q-course">Design Communication I</div>
+        <div class="q-code">ARCH X 467.17A · 6 units · Live Online / Online</div>
+        <div class="q-why">Freehand drawing and drafting — the ability to sketch a space for a client in real time. Changes how you present The Blueprint entirely. A 6-unit course so give it room — skip the quarter after if needed.</div>
+        <div class="q-cost">$745+</div>
+      </div>
+      <div class="quarter rest">
+        <div class="q-label">Quarter 6 · Winter 2027</div>
+        <div class="q-rest">Rest quarter. M.Ed graduation December 2026 — give yourself that win fully before loading up again.</div>
+      </div>
+    </div>
+
+    <div class="unlock">
+      <div class="unlock-icon">✦</div>
+      <div class="unlock-text">After M.Ed graduation: Two degrees behind you, UCLA in progress. <strong>Begin taking Magnum Opus inquiries.</strong> Your credentials now fully support premium pricing. Raise Blueprint to $450/room.</div>
+    </div>
+
+    <div class="quarters" style="margin-top:.75rem;">
+      <div class="quarter active">
+        <div class="q-label">Quarter 7 · Spring 2027</div>
+        <div class="q-course">Surface Materials</div>
+        <div class="q-code">ARCH X 427.7 · 4 units · Live Online</div>
+        <div class="q-why">Textiles, wall coverings, flooring, woods, hard surfaces. Directly upgrades every client consultation. After this course your material recommendations become expert-level — a clear Remix and Magnum Opus differentiator.</div>
+        <div class="q-cost">$745</div>
+      </div>
+      <div class="quarter active">
+        <div class="q-label">Quarter 8 · Summer 2027</div>
+        <div class="q-course">Digital Presentation I: Photoshop / Illustrator</div>
+        <div class="q-code">ARCH X 468.20 · 4 units · Live Online / Online</div>
+        <div class="q-why">Elevates every deliverable you produce. Your Blueprint packages, mood boards, and client presentations become visually polished at a professional level. This is the course clients will see in your work before you tell them you took it.</div>
+        <div class="q-cost">$745</div>
+      </div>
+    </div>
+
+    <div class="unlock">
+      <div class="unlock-icon">✦</div>
+      <div class="unlock-text">After Surface Materials: <strong>The Remix</strong> fully unlocks — you now speak confidently about every surface in the room. After Photoshop/Illustrator: All Blueprint deliverables upgrade visually. Raise Blueprint to $500/room.</div>
+    </div>
+
+    <div class="cost-tracker">
+      <div class="ct-label">Year 2 tuition spend</div>
+      <div class="ct-num">~$1,490 (2 courses)</div>
+      <div class="ct-label">Running total</div>
+      <div class="ct-num">$3,725 of ~$17,020</div>
+    </div>
+  </div>
+
+  <!-- YEAR 3 -->
+  <div class="year">
+    <div class="year-header">
+      <div class="year-label">Year Three</div>
+      <div class="year-sub">2027 – 2028 · The studio years</div>
+      <div class="year-rule"></div>
+    </div>
+
+    <div class="quarters">
+      <div class="quarter active">
+        <div class="q-label">Quarter 9 · Fall 2027</div>
+        <div class="q-course">Interior Architecture Studio I</div>
+        <div class="q-code">ARCH X 433 · 6 units · Live Online / Online</div>
+        <div class="q-why">The first studio course — applying design principles to actual space layouts with ergonomics. This is where the technical design work begins in earnest. After this course, Magnum Opus becomes your primary revenue driver.</div>
+        <div class="q-cost">$745+</div>
+      </div>
+      <div class="quarter active">
+        <div class="q-label">Quarter 10 · Winter 2028</div>
+        <div class="q-course">History of Environmental Arts I</div>
+        <div class="q-code">ARCH X 427.8A · 4 units · Live Online / Online</div>
+        <div class="q-why">Design history from ancient through medieval periods. Deepens your cultural storytelling — the ability to connect a client's space to a design lineage is a premium differentiator very few designers offer.</div>
+        <div class="q-cost">$745</div>
+      </div>
+    </div>
+
+    <div class="quarters" style="margin-top:.75rem;">
+      <div class="quarter active">
+        <div class="q-label">Quarter 11 · Spring 2028</div>
+        <div class="q-course">Lighting Design</div>
+        <div class="q-code">ARCH X 467.15 · 4 units · Live Online</div>
+        <div class="q-why">Light and texture, color rendering, fixture selection, switching patterns. Lighting is the most transformative and undervalued design element. After this course, consider adding a Lighting Consultation add-on to your services.</div>
+        <div class="q-cost">$745</div>
+      </div>
+      <div class="quarter active">
+        <div class="q-label">Quarter 12 · Summer 2028</div>
+        <div class="q-course">Elements of Design II</div>
+        <div class="q-code">ARCH X 454B · 4 units · Live Online / Online</div>
+        <div class="q-why">Advanced design elements — continues and deepens Elements I. By this point you are midway through the certificate and your services command premium pricing across the board.</div>
+        <div class="q-cost">$745</div>
+      </div>
+    </div>
+
+    <div class="unlock">
+      <div class="unlock-icon">✦</div>
+      <div class="unlock-text">After Interior Architecture Studio I: <strong>The Magnum Opus</strong> is your primary focus. Raise your full room design rate to $5,000+. You now have the technical foundation, the cultural lens, and the formal training to command it. Consider adding a <strong>Lighting Consultation</strong> add-on after Lighting Design.</div>
+    </div>
+
+    <div class="cost-tracker">
+      <div class="ct-label">Year 3 tuition spend</div>
+      <div class="ct-num">~$2,980 (4 courses)</div>
+      <div class="ct-label">Running total</div>
+      <div class="ct-num">$6,705 of ~$17,020</div>
+    </div>
+  </div>
+
+  <!-- YEARS 4-5 -->
+  <div class="year">
+    <div class="year-header">
+      <div class="year-label">Years Four & Five</div>
+      <div class="year-sub">2028 – 2030 · Advanced practice + certificate completion</div>
+      <div class="year-rule"></div>
+    </div>
+
+    <div class="note-box">
+      <p>By Year 4 you have completed 12 of 18 courses, your business is generating six figures, and you are taking the remaining 6 courses at your own pace — 1–2 per year. The remaining courses include <strong>Design Communication II & III</strong>, <strong>Digital Presentation II & III</strong> (Revit and AutoCAD), <strong>History of Environmental Arts II, III & IV</strong>, and <strong>Interior Architecture Studio II</strong>. These deepen your technical and historical credentials and position you to apply to UCLA's Master of Interior Architecture program if you choose.</p>
+    </div>
+
+    <div class="unlock">
+      <div class="unlock-icon">✦</div>
+      <div class="unlock-text">Certificate completion: <strong>NCIDQ exam eligibility</strong> after meeting work experience requirements. <strong>Master of Interior Architecture application eligibility</strong> with 3.0 GPA+. You will have a bachelor's degree — you already qualify. This is the path to becoming a licensed interior architect, not just a designer.</div>
+    </div>
+
+    <div class="cost-tracker">
+      <div class="ct-label">Remaining 6 courses (Years 4–5)</div>
+      <div class="ct-num">~$4,470</div>
+      <div class="ct-label">Total program cost</div>
+      <div class="ct-num">~$11,175 (18 courses at ~$745)</div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- OFFERING EVOLUTION -->
+  <div style="margin-bottom:2rem;">
+    <div class="section-eyebrow">How your offerings evolve with your education</div>
+    <div class="section-title">What you can <em>charge as you learn</em></div>
+
+    <div class="offering-timeline">
+      <div class="ot-row header">
+        <div class="ot-cell">Period</div>
+        <div class="ot-cell">Services available</div>
+        <div class="ot-cell">Rate range</div>
+      </div>
+      <div class="ot-row">
+        <div class="ot-period">Now — Fall 2025<br>Pre-UCLA</div>
+        <div class="ot-available">The First Spin · The Crate · The Blueprint (2-room min)</div>
+        <div class="ot-rate">Blueprint: $350/room<br>Crate: $100<br>First Spin: $125/hr</div>
+      </div>
+      <div class="ot-row">
+        <div class="ot-period">After Q1<br>Fundamentals done</div>
+        <div class="ot-available">All above + credentialed language in all communications. Begin mentioning UCLA in bio and proposals.</div>
+        <div class="ot-rate">Blueprint: $350–$400/room<br><span class="ot-new">Add UCLA credential to all materials</span></div>
+      </div>
+      <div class="ot-row">
+        <div class="ot-period">After Q3<br>Color Theory done</div>
+        <div class="ot-available">All above + <span class="ot-new">The Color Correction unlocked at full rate</span></div>
+        <div class="ot-rate">Color Correction: $200<br>Blueprint: $400/room</div>
+      </div>
+      <div class="ot-row">
+        <div class="ot-period">After M.Ed + Q5<br>Dec 2026</div>
+        <div class="ot-available">All above + <span class="ot-new">Begin Magnum Opus inquiries</span>. Two degrees, UCLA in progress.</div>
+        <div class="ot-rate">Magnum Opus: $3,500–$5,000<br>Blueprint: $450/room</div>
+      </div>
+      <div class="ot-row">
+        <div class="ot-period">After Q7–8<br>Surface Materials + Photoshop</div>
+        <div class="ot-available">All above + <span class="ot-new">The Remix fully unlocked</span>. All deliverables professionally designed.</div>
+        <div class="ot-rate">Remix: $600–$800<br>Blueprint: $500/room</div>
+      </div>
+      <div class="ot-row">
+        <div class="ot-period">After Q9<br>Studio I done</div>
+        <div class="ot-available">Full catalog at premium rates. <span class="ot-new">Consider adding Lighting Consultation</span> ($150–$250) as a standalone add-on.</div>
+        <div class="ot-rate">Magnum Opus: $5,000+<br>Blueprint: $500/room<br><span class="ot-new">Lighting add-on: $200</span></div>
+      </div>
+      <div class="ot-row">
+        <div class="ot-period">Certificate complete<br>~2029–2030</div>
+        <div class="ot-available">Full catalog + NCIDQ eligible + MIA application eligible. Begin positioning as <span class="ot-new">Licensed Interior Architect</span> — a meaningfully different title.</div>
+        <div class="ot-rate">All rates at ceiling<br>Magnum Opus: $6,000+<br>Blueprint: $600+/room</div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- PRACTICAL TIPS -->
+  <div style="margin-bottom:2rem;">
+    <div class="section-eyebrow">Making it work</div>
+    <div class="section-title">Practical <em>notes</em></div>
+    <div class="tips">
+      <div class="tip">
+        <div class="tip-title">You don't have to commit to the certificate yet</div>
+        <div class="tip-body">UCLA Extension allows up to 5 courses before establishing candidacy. Start with Fundamentals of Interior Architecture this fall — pay the $745, take the class, see how it fits your life. No commitment required.</div>
+      </div>
+      <div class="tip">
+        <div class="tip-title">Let Haus of Coleman fund UCLA</div>
+        <div class="tip-body">One Blueprint client at $700 covers almost a full course. Two clients covers it with money left over. The business is designed to pay for the education that makes the business more valuable. They feed each other.</div>
+      </div>
+      <div class="tip">
+        <div class="tip-title">Skip quarters without guilt</div>
+        <div class="tip-body">You have 5 years. If a quarter is hard — grief, M.Ed pressure, a big project — skip it. The program accommodates you. Rest is not falling behind. It is staying in the game long enough to finish.</div>
+      </div>
+      <div class="tip">
+        <div class="tip-title">Use every course in your marketing</div>
+        <div class="tip-body">The moment you enroll in a course, add it to your Instagram bio, your brochure, and your email signature. "Currently studying Interior Architecture at UCLA Extension" is a powerful line. You don't have to be done to be credentialed.</div>
+      </div>
+      <div class="tip">
+        <div class="tip-title">History courses can be taken out of sequence</div>
+        <div class="tip-body">The four History of Environmental Arts courses are flexible — take them in any order, in any quarter. They're lower-intensity and make great "rest quarter" courses when you still want to stay enrolled but need lighter work.</div>
+      </div>
+      <div class="tip">
+        <div class="tip-title">The M.Ed is not a conflict — it's a credential stack</div>
+        <div class="tip-body">M.Ed in Leadership + UCLA Interior Architecture + 15 years experience + your story = a profile nobody else has. When you're ready to teach design or lead a program, that combination opens doors that neither degree opens alone.</div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="closing">
+    <div class="gold-rule"></div>
+    <p>This is not a race to a certificate. It is a deliberate, self-funded education that makes you more valuable every single quarter — whether or not you're enrolled that term. You are already a designer. UCLA just gives you the language, the credentials, and eventually the license to prove it to anyone who asks.</p>
+    <div class="gold-rule"></div>
+    <div style="font-family:'Space Mono',monospace; font-size:6.5pt; letter-spacing:.2em; color:var(--gold); opacity:.45; text-transform:uppercase; margin-top:1rem;">Haus of Coleman · UCLA Extension Game Plan · Houston, TX</div>
+  </div>
+
+</div>
+</body>
+</html>
